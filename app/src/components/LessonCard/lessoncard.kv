@@ -1,0 +1,17 @@
+<LessonCard>:
+    size_hint_x:None
+    size_hint_y:None
+    width:root.width
+    height:root.height
+    canvas.after:
+        Color:
+            rgba:(0.2, 0.3, 0.9, 1)
+        Line:
+            width:3
+            rectangle:[self.x, self.y, self.width, self.height]
+    
+    MDLabel:
+        text:root.subject
+    MDLabel:
+        text:str(root.teacher)
+    
