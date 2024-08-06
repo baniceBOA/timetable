@@ -2,12 +2,12 @@ import os
 from kivy.lang import Builder
 from kivymd.uix.card import MDCard
 from kivy.properties import NumericProperty, StringProperty
-from kivy.uix.behaviors import DragBehavior
+from kivy_garden.draggable import KXDraggableBehavior
 
 Builder.load_file(os.path.join(os.path.dirname(__file__), 'lessoncard.kv'))
 
 
-class Lessoncard(DragBehavior, MDCard):
+class Lessoncard(KXDraggableBehavior, MDCard):
     ''' LessonCard 
         stores the property of a lesson in the lesson grid 
         posses the property of a sticky label and the sametime a button 
@@ -24,4 +24,4 @@ class Lessoncard(DragBehavior, MDCard):
     height = NumericProperty(10)
 
     def __repr__(self):
-        return 'LessonCard'
+        return f'< teacher <{self.teacher}> subject {self.subject} in class {self.class_name}'

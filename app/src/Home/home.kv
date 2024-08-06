@@ -9,10 +9,9 @@
             icon:'book-education'
         MDIconButton:
             icon:'baby-face'
-    MDBoxLayout:
-        pos_hint:{'top':0.85, 'center_x':0.5}
-        size_hint_y:None
-        height:dp(400)
+    MDFloatLayout:
+        pos_hint:{'top':0.85}
+        adaptive_height:True
         canvas.after:
             Color:
                 rgba:[0.2, 0.7, 0.8, 0.2]
@@ -20,7 +19,13 @@
                 width:3
                 rectangle:[self.x+5,self.y-20, self.width-10, self.height]
         TimetableView:
+            pos_hint:{'top':1}
             id:timetableview
+    LessonBank:
+        pos_hint:{'top':0.26}
+        size_hint_y:None
+        height:dp(100)
+        id:lesson_bank
         
             
 

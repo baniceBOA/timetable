@@ -1,6 +1,8 @@
 from kivymd.uix.gridlayout import MDGridLayout
 from kivy.properties import NumericProperty
-from src.components.LessonCard import Lessoncard
+
+from src.components.lessoncard import Lessoncard
+from src.components.lessoncell import LessonCell
 from kivy.lang import Builder
 import os
 
@@ -22,7 +24,7 @@ class LessonGrid(MDGridLayout):
         ''' add a <LessonCard> instance to the grid the'''
         # The only widget that can be added is the LessonCard or
         # an instance of the Lessoncard
-        if isinstance(widget, Lessoncard):
-            super(LessonGrid, self).add_widget(widget, index=index, canvas=canvas)
+        if isinstance(widget, (Lessoncard, LessonCell)):
+            return super(LessonGrid, self).add_widget(widget, index=index, canvas=canvas)
         else:
-            raise LessonGridException( f'Can not add the {widget} to the Lesson Grid can only accept <{Lessoncard}> objects ')
+            raise LessonGridException( f'Can not add the {widget} to the Lesson Grid can only accept <{Lessoncard}> or <{LessonCell}> objects ')

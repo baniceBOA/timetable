@@ -18,11 +18,27 @@
     
 
     #LESSON GRID VIEW
-    LessonGrid:
-        id:lesson_grid
-        pos_hint:{'top':0.1, 'center_x':0}
-        cols:root.cols
-        rows:root.rows
+    MDScrollView:
+
+        pos_hint:{'top':1, 'right':1.5}
+        size_hint_y:None
+        height:dp(800)
+        size_hint_x:None
+        width:dp(800)
+        do_scroll_x:True
+        do_scroll_y:False
+        bar_margin:20
+        bar_width:10
+        MDBoxLayout:
+            adaptive_size:True
+            LessonGrid:
+                
+                id:lesson_grid
+                cols:root.cols
+                rows:root.rows
+                size_hint_x:None
+                width:dp(1000)
+            
         
 
 

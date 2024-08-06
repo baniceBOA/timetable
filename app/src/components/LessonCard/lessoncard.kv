@@ -1,17 +1,24 @@
 <LessonCard>:
-    size_hint_x:None
+    #size_hint_x:None
     size_hint_y:None
     width:root.width
     height:root.height
+    drag_cls: 'lessoncard'
+    drag_timeout: 0
     canvas.after:
         Color:
             rgba:(0.2, 0.3, 0.9, 1)
         Line:
             width:3
             rectangle:[self.x, self.y, self.width, self.height]
+    MDRelativeLayout:
     
-    MDLabel:
-        text:root.subject
-    MDLabel:
-        text:str(root.teacher)
+        MDLabel:
+            font_size:dp(14)
+            halign:'center'
+            text:root.subject
+            pos_hint:{'center_x':0.5, 'center_y':0.5}
+        MDLabel:
+            text:str(root.teacher)
+            pos_hint:{'center_x':0.8, 'center_y':0.9}
     
